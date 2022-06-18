@@ -13,9 +13,9 @@ Things that need doing
   <li>half-half layout needs work for selections on smaller devices</li>
   <li>basket (the non-iframe version isn't complete yet (would show pictures))</li>
   <li>implement duplicate order grouping</li>
+  <li>Add button to remove specific items from basket</li>
+  <li>Fix issue related to firefox - issue seems to be related to inactivity reset</li>
 </ul>
 
-Things that broke on this publicily hosted version (at least on the website itself)
-<ul>
-  <li>The CSS for the builder isn't updating to account for small fix on description being hidden</li>
-</ul>
+The style variant sheets are slightly out of date so certain parts of the ui may break if using a variant.
+
