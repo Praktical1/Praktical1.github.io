@@ -230,7 +230,7 @@ iframe {
 }
 
 @media only screen and (min-width: 1135px) {
-    #leftSelect, #rightSelect,.selection .items p {
+    #leftSelect, #rightSelect,.selection .items > p  {
         display: none;
     }
     .selection .items .item {
