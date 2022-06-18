@@ -15,7 +15,7 @@ Things that need doing
   <li>implement duplicate order grouping</li>
 </ul>
 
-Things that broke on this public version
+Things that broke on this publicily hosted version (at least on the website itself)
 <ul>
   <li>The CSS for the builder isn't updating to account for small fix on description being hidden</li>
 </ul>
