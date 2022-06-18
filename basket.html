@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/basketstyle.css" type="text/css">
+    <title>Prakizza's Basket</title>
+    <script src="JS/Basket.js"></script>
+    <link rel="icon" href="Prakizza.ico">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><button onclick="history.back()">Go Back</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <div>
+                <aside>
+                    <h1 class="pagetitleleft">Prakizza's</h1>
+                    <img src="images/Logo200.png" alt="Prakizza" class="Logo" />
+                    <h1 class="pagetitleright">Basket</h1>
+                </aside>
+                <article>
+                    <h1>Basket</h1>
+                    <ul id="list">
+                    </ul>
+                    <h2>Total = £<div class="total"></div>
+                    </h2>
+                </article>
+                <footer>
+                    <div class="reset">
+                        <button reset>Clear Basket</button>
+                    </div>
+                    <form action="http://localhost:7071/api/post" method="POST">
+                        <input type="hidden" id="order" name="order">
+                        <input type="hidden" id="address" name="address">
+                        <input type="submit" value="Order" />
+                    </form>
+                    <div class="view-basket">
+                        <button view-basket>View Basket</button>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    color: #00b1a5;
+}
+
+/*nav bar*/
+
+nav {
+    width: 100vw;
+    height: calc(23px + 3vh);
+}
+nav button:hover {
+    background-color: #000000;
+}
+nav button {
+    transition-duration: 0.4s;
+    background: transparent;
+    border: 0;
+    color: #77fff6;
+    font-size: 20px;
+    margin: 0px;
+    padding: 1.5vh calc(((100vw - 300px) / 10)) 1.5vh calc(((100vw - 300px) / 10));
+}
+nav>ul {
+    display: inline;
+    padding: 0;
+}
+nav>ul>li {
+    display: inline-block;
+    list-style: none;
+    font-size: 20px;
+    margin: 0;
+}
+@media only screen and (max-width: 325px) {
+    nav button {
+        font-size: 15px;
+        margin: 1.5vh calc(((94vw - 225px) / 10)) 1.5vh calc(((94vw - 225px) / 10));
+    }
+}
+
+h6 {
+    font-size: 50px;
+    color: #f8282f;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+header {
+    background-color: #636363;
+    position: fixed;
+    z-index: 99;
+}
+
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #4d4d4d;
+}
+
+.content {
+    background-image: url("../images/Background.png");
+}
+
+main {
+    text-align: center;
+    display: block;
+    min-height: 100%;
+    padding-top: calc(23px + 3vh);
+}
+
+.sidebar {
+    display: none;
+}
+
+aside {
+    padding-top: 1%;
+    display: block;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+button {
+    cursor: pointer;
+}
+
+iframe {
+    overflow-y: hidden;
+    height: calc(97vh - 20px);
+}
+
+@media only screen and (min-width: 800px) {
+    .content {
+        max-width: 100%;
+        margin-right: 300px;
+    }
+
+    aside {
+        margin-left: 2%;
+    }
+
+    .sidebar {
+        display: flex;
+        background-color: blanchedalmond;
+        position: fixed;
+        right: 0;
+    }
+}
+
+/*Pizza*/
+
+.content article .items .item img {
+    height: 70%;
+    width: 90%;
+}
+
+.desc {
+    font-size: smaller;
+    font-weight: bolder;
+}
+
+.contains {
+    font-size: smaller;
+}
+
+.item {
+    width: 84%;
+    height: 410px;
+    padding: 4%;
+    margin: 4%;
+    background-color: rgb(83, 83, 83);
+    border: solid 1px rgb(114, 0, 0);
+}
+
+
+.item img {
+    width: 100%;
+}
+
+.item .title {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.item .columns {
+    width: 100%;
+}
+
+.item .columns div {
+    width: 100%;
+}
+
+.item .specialgap h2 {
+    display: none;
+}
+
+.item desc {
+    font-size: small;
+    text-align: left;
+}
+
+@media only screen and (min-width: 482px) {
+    .item {
+        width: 45%;
+        height: 400px;
+        padding: 1%;
+        margin: 1%;
+    }
+
+    aside {
+        display: inline-flex;
+    }
+
+    .pagetitleleft {
+        text-align: left;
+        line-height: 200px;
+        font-size: x-large;
+    }
+
+    .pagetitleright {
+        text-align: right;
+        line-height: 200px;
+        font-size: x-large;
+    }
+}
+
+@media only screen and (min-width: 482px) and (max-width: 1000px) {
+    .contains {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-width: 1161px) {
+    .item {
+        width: 28.9%;
+        height: 450px;
+        padding: 1%;
+        margin: 1%;
+    }
+
+    .item .specialgap h2 {
+        display: block;
+    }
+
+    .pagetitleleft {
+        font-size: xx-large;
+    }
+
+    .pagetitleright {
+        font-size: xx-large;
+    }
+
+}
+
+/*Scrollbar*/
+
+::-webkit-scrollbar {
+    width:14px;
+}
+
+::-webkit-scrollbar-track {
+    background: #818181;
+    border: solid 1px rgb(0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #242424;
+    border: solid 1px rgb(0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #000000;
+}

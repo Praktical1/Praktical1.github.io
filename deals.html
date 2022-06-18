@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css" type="text/css">
+    <title>Prakizza's Deals</title>
+    <script src="JS/Main.js"></script>
+    <link rel="icon" href="Prakizza.ico">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><button onclick='goTo("pizzas.html")'>Pizza</a></li>
+                <li><button onclick='goTo("sides.html")'>Sides</a></li>
+                <li><button onclick='goTo("drinks.html")'>Drinks</a></li>
+                <li><button onclick='goTo("deals.html")'>Deals</a></li>
+                <li><button onclick='goTo("basket.html")'>Basket</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="sidebar">
+            <iframe id="sidebasket" src="basket.html" frameborder="0"></iframe>
+        </div>
+        <div class="content">
+            <aside>
+                <div class="pagetitleleft">
+                    <h1>Prakizza's</h1>
+                </div>
+                <img src="images/Logo200.png" alt = "Prakizza" class="Logo"/>
+                <div class="pagetitleright">
+                    <h1>Deals</h1>
+                </div>
+            </aside>
+            <article>
+                <h6>
+                    Coming Soon tm
+                </h6>
+            </article>
+        </div>
+    </main>
+</body>
+<script>
+    function goTo(website) {
+        top.window.location.href = website;
+    }
+</script>
+</html>

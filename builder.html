@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/builderstyle.css" type="text/css">
+    <title>Prakizza's Pizza Builder</title>
+    <link rel="icon" href="Prakizza.ico">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><button onclick='goTo("pizzas.html")'>Pizza</a></li>
+                <li><button onclick='goTo("sides.html")'>Sides</a></li>
+                <li><button onclick='goTo("drinks.html")'>Drinks</a></li>
+                <li><button onclick='goTo("deals.html")'>Deals</a></li>
+                <li><button onclick='goTo("basket.html")'>Basket</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="sidebar">
+            <iframe id="sidebasket" src="basket.html" frameborder="0"></iframe>
+        </div>
+        <div class="content">
+            <aside>
+                <div class="pagetitleleft">
+                    <h1>Prakizza's</h1>
+                </div>
+                <img src="images/Logo200.png" alt="Prakizza" class="Logo" />
+                <div class="pagetitleright">
+                    <h1>Half-Half</h1>
+                </div>
+            </aside>
+            <article>
+                <div class="selection">
+                    <div class="cost-size">
+                        <select onchange="updatePizzaTotal()">
+                            <option value="12.99,Pizzanormous 20" selected>Pizzanormous 20" - Starting from £12.99</option>
+                            <option value="8.99,Large 16">Large 16" - Starting from £8.99</option>
+                            <option value="6.49,Medium 12">Medium 12" - Starting from £6.49</option>
+                            <option value="4.99,Small 8">Small 8" - Starting from £4.99</option>
+                        </select>
+                    </div>
+                    <div class="items">
+                        <div class="item">
+                            <div class="pizzaLeft">
+                                <img src="" />
+                                <div class="columns">
+                                    <div class="title"></div>
+                                    <div class="price"></div>
+                                </div>
+                                <p class="desc"></p>
+                                <p class="contains"></p>
+                                <h1 id="leftSelected"></h1>
+                            </div>
+                        </div>
+                        <p>Left: </p><h1 id="leftSelect">none</h1>
+                        <!--Side Selection-->
+                        <img src="images/pizza-half-unselected-left.png" alt="Left Unselected" id="left-unselected" height="200px" onclick='select("Left")'>
+                        <img src="images/pizza-half-selected-left.png" alt="Left Selected" id="left-selected" height="200px">
+                        <img src="images/pizza-half-selected-right.png" alt="Right Selected" id="right-selected" height="200px">
+                        <img src="images/pizza-half-unselected-right.png" alt="Left Unselected" id="right-unselected" height="200px" onclick='select("Right")'>
+
+                        <p>Right: </p><h1 id="rightSelect">none</h1>
+
+                        <div class="item">
+                            <div class="pizzaRight">
+                                <img src="" />
+                                <div class="columns">
+                                    <div class="title"></div>
+                                    <div class="price"></div>
+                                </div>
+                                <p class="desc"></p>
+                                <p class="contains"></p>
+                                <h1 id="rightSelected"></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button addToBasket id="addToBasket">This pizza costs<div id=total>£12.99</div><br>Submit selected combination</button>
+                <div class="alert" style="display:none;">
+                    <span class="close" onclick='this.parentElement.style.display="none";'>&times;</span>
+                    <strong>Warning!</strong> Please select a pizza for both halves.
+                </div>
+                <!--Pizza Selections-->
+                <section class="items">
+                    <div class="item">
+                        <h2>Special!</h2>
+                        <img src="images/Pizzas/Chunky-Decker.jpg" alt="Chunky Decker" />
+                        <div class="columns">
+                            <div class="title" id="Chunky-Decker">Chunky Decker</div>
+                            <div class="price" id="5.99">£5.99</div>
+                        </div>
+                        <p class="desc">Two Layers of Pizza with a Garlic Paste Filling</p>
+                        <button addToHalf="Ham~Pepperoni~Chicken">Add to Selected half</button>
+                        <p class="contains">Contains: Ham,Pepperoni,Chicken</p>
+                    </div>
+
+                    <div class="item">
+                        <div class="specialgap1">
+                            <h2>&nbsp</h2>
+                        </div>
+                        <img src="images/Pizzas/Margherita.jpg" alt="Margherita" />
+                        <div class="columns">
+                            <div class="title" id="Margherita">Margherita</div>
+                            <div class="price" id="0.99">£0.99</div>
+                        </div>
+                        <p class="desc">Delicious cheese with Tomato sauce</p>
+                        <button addToHalf="No Toppings">Add to Selected half</button>
+                        <p class="contains">Contains: No Toppings</p>
+                    </div>
+
+                    <div class="item">
+                        <div class="specialgap2">
+                            <h2>&nbsp</h2>
+                        </div>
+                        <img src="images/Pizzas/Pepperoni.jpg" alt="Pepperoni" />
+                        <div class="columns">
+                            <div class="title" id="Pepperoni">Pepperoni</div>
+                            <div class="price" id="0.99">£0.99</div>
+                        </div>
+                        <p class="desc">Crisy Pepperoni on a Margherita</p>
+                        <button addToHalf="Pepperoni">Add to Selected half</button>
+                        <p class="contains">Contains: Pepperoni</p>
+                    </div>
+
+                    <div class="item">
+                        <img src="images/Pizzas/Extra-cheese.jpg" alt="Extra Cheesy" />
+                        <div class="columns">
+                            <div class="title" id="Extra-cheese">Extra Cheesy</div>
+                            <div class="price" id="1.99">£1.99</div>
+                        </div>
+                        <p class="desc">Mmmm just can't have enough of that delicious cheese</p>
+                        <button addToHalf="Extra Cheese">Add to Selected half</button>
+                        <p class="contains">Contains: Extra Cheese</p>
+                    </div>
+
+                    <div class="item">
+                        <img src="images/Pizzas/Vegetable-Supreme.jpg" alt="Vegetable Supreme" />
+                        <div class="columns">
+                            <div class="title" id="Vegetable-Supreme">Vegetable Supreme</div>
+                            <div class="price" id="1.99">£1.99</div>
+                        </div>
+                        <p class="desc">All the veggies you'll ever need</p>
+                        <button addToHalf="Mushrooms~Mixed Peppers~Red Onions~Tomato">Add to Selected half</button>
+                        <p class="contains">Contains: Mushrooms,Mixed Peppers,Red Onions,Tomato</p>
+                    </div>
+
+                    <div class="item">
+                        <img src="images/Pizzas/Super-Supreme.jpg" alt="Super Supreme" />
+                        <div class="columns">
+                            <div class="title" id="Super-Supreme">Super Supreme</div>
+                            <div class="price" id="2.99">£2.99</div>
+                        </div>
+                        <p class="desc">Everything on one pizza</p>
+                        <button addToHalf="Pepperoni~Seasoned Minced Beef~Spicy Pork Sausage~Mushrooms~Mixed Peppers~Red Onions">Add to Selected half</button>
+                        <p class="contains">Contains: Pepperoni,Seasoned Minced Beef,Spicy Pork Sausage,Mushrooms,Mixed Peppers,Red Onions</p>
+                    </div>
+
+                    <div class="item">
+                        <img src="images/Pizzas/Meatastic.jpg" alt="Meatastic" />
+                        <div class="columns">
+                            <div class="title" id="Meatastic">Meatastic</div>
+                            <div class="price" id="1.99">£1.99</div>
+                        </div>
+                        <p class="desc">Satisfy that inner carnivore</p>
+                        <button addToHalf="Pepperoni~Seasoned Minced Beef~Spicy Pork Sausage~Meatballs~Ham">Add to Selected half</button>
+                        <p class="contains">Contains: Pepperoni,Seasoned Minced Beef,Spicy Pork Sausage,Meatballs,Ham</p>
+                    </div>
+
+                    <div class="item">
+                        <img src="images/Pizzas/Meatballin.jpg" alt="Meatballin" />
+                        <div class="columns">
+                            <div class="title" id="Meatballin">Meatballin</div>
+                            <div class="price" id="1.99">£1.99</div>
+                        </div>
+                        <p class="desc">Meatballs in sight, are we in Italy?</p>
+                        <button addToHalf="Pepperoni~Meatballs">Add to Selected half</button>
+                        <p class="contains">Contains: Pepperoni,Meatballs</p>
+                    </div>
+
+                    <div class="item">
+                        <img src="images/Pizzas/Chuckin.jpg" alt="Chuckin" />
+                        <div class="columns">
+                            <div class="title" id="Chuckin">Chuckin</div>
+                            <div class="price" id="1.99">£1.99</div>
+                        </div>
+                        <p class="desc">KFC but on a pizza</p>
+                        <button addToHalf="Pepperoni~Diced Chicken">Add to Selected half</button>
+                        <p class="contains">Contains: Pepperoni,Diced Chicken</p>
+                    </div>
+
+                    <div class="item">
+                        <img src="images/Pizzas/New-Yorker.jpg" alt="New Yorker" />
+                        <div class="columns">
+                            <div class="title" id="New-Yorker">New Yorker</div>
+                            <div class="price" id="1.99">£1.99</div>
+                        </div>
+                        <p class="desc">Have the classic favourite from New York</p>
+                        <button addToHalf="Pepperoni~Mushrooms~Ham">Add to Selected half</button>
+                        <p class="contains">Contains: Pepperoni,Mushrooms,Ham</p>
+                    </div>
+
+                    <div class="item">
+                        <img src="images/Pizzas/Bait-Hate.png" alt="Bait Hate" />
+                        <div class="columns">
+                            <div class="title" id="Bait-Hate">Bait Hate</div>
+                            <div class="price" id="1.99">£1.99</div>
+                        </div>
+                        <p class="desc">Pineapple?! You monster</p>
+                        <button addToHalf="Pineapple~Ham">Add to Selected half</button>
+                        <p class="contains">Contains: Pineapple,Ham</p>
+                    </div>
+
+                    <div class="item">
+                        <img src="images/Pizzas/Vegan-Vegetable-Supreme.jpg" alt="Vegan Vegetable Supreme" />
+                        <div class="columns">
+                            <div class="title" id="Vegan-Vegetable-Supreme">Vegan Vegetable Supreme</div>
+                            <div class="price" id="1.99">£1.99</div>
+                        </div>
+                        <p class="desc">Saving animals one bite at a time</p>
+                        <button addToHalf="Mushrooms~Mixed Peppers~Red Onions~Tomato~Vegan Cheese">Add to Selected half</button>
+                        <p class="contains">Contains: Mushrooms,Mixed Peppers,Red Onions,Tomato,Vegan Cheese</p>
+                    </div>
+
+                    <div class="item">
+                        <img src="images/Pizzas/Vegan-Metador.jpg" alt="Vegan Metador" />
+                        <div class="columns">
+                            <div class="title" id="Vegan-Metador">Vegan Metador</div>
+                            <div class="price" id="2.99">£2.99</div>
+                        </div>
+                        <p class="desc">Our Vegan friendly pizza topped with beyond meat's special mix</p>
+                        <button addToHalf="Meat-free BeyondMeat® Italian Style Sausage~Meat-free BeyondMeat® Beef crumble~Meat-free BeyondMeat® Pork crumble~Vegan Cheese">Add to Selected half</button>
+                        <p class="contains">Contains: Meat-free BeyondMeat®[Italian Style Sausage,Beef crumble,Pork crumble],Vegan Cheese</p>
+                    </div>
+
+                    <div class="item">
+                        <img src="images/Pizzas/Gluten-Free-Vegan-Supreme.jpg" alt="Gluten-Free Vegan Vegetable Supreme" />
+                        <div class="columns">
+                            <div class="title" id="Gluten-Free-Vegan-Supreme">Gluten-Free Vegan Vegetable Supreme</div>
+                            <div class="price" id="1.99">£2.99</div>
+                        </div>
+                        <p class="desc">You're a picky one aren't you</p>
+                        <button addToHalf="Mushrooms~Mixed Peppers~Red Onions~Tomato~Vegan Cheese~Gluten-Free Base">Add to Selected half</button>
+                        <p class="contains">Contains: Contains: Mushrooms,Mixed Peppers,Red Onions,Tomato,Vegan Cheese with a Gluten-Free Base</p>
+                    </div>
+
+                    <div class="item">
+                        <img src="images/Pizzas/Gluten-Free-Meatastic.jpg" alt="Gluten-Free Meatastic" />
+                        <div class="columns">
+                            <div class="title" id="Gluten-Free-Meatastic">Gluten-Free Meatastic</div>
+                            <div class="price" id="1.99">£2.99</div>
+                        </div>
+                        <p class="desc">Meat for those who can't handle bread</p>
+                        <button addToHalf="Pepperoni~Seasoned Minced Beef~Spicy Pork Sausage~Meatballs~Ham~Gluten-Free Base">Add to Selected half</button>
+                        <p class="contains">Contains: Pepperoni,Seasoned Minced Beef,Spicy Pork Sausage,Meatballs,Ham with a Gluten-Free Base</p>
+                    </div>
+
+                </section>
+            </article>
+        </div>
+    </main>
+    <div class="hidden" style="display: none;" id="default">
+        <div class="columns">
+            <div class="title" id="What">Unselected</div>
+            <div class="price" id="0.00">&nbsp</div>
+        </div>
+        <p class="desc">Select a Pizza</p>
+        <p class="contains">&nbsp</p>
+    </div>
+</body>
+<script>
+    function goTo(website) {
+        top.window.location.href = website;
+    }
+    var left = true;
+    function check(){
+        if (left == true) {
+            document.getElementById("leftSelected").innerText = "Left Selected";
+            document.getElementById("left-unselected").style.display = "none";
+            document.getElementById("left-selected").style.display = "inline-flex";
+            document.getElementById("right-selected").style.display = "none";
+            document.getElementById("right-unselected").style.display = "inline-flex";
+            document.getElementById("rightSelected").innerText = '';
+        } else {
+            document.getElementById("leftSelected").innerText = "";
+            document.getElementById("left-unselected").style.display = "inline-flex";
+            document.getElementById("left-selected").style.display = "none";
+            document.getElementById("right-selected").style.display = "inline-flex";
+            document.getElementById("right-unselected").style.display = "none";
+            document.getElementById("rightSelected").innerText = "Right Selected";
+        }
+    }
+    function select(side){
+        if (side == "Left") {
+            left = true;
+        } else {
+            left = false;
+        }
+        check();
+    }
+    var hours = 1; //(Note 0 is for testing purposes) Determines number of hours of inactivity before storage is wiped.
+    var now = new Date().getTime();     //Local time in milliseconds
+    var lastAccessed = localStorage.getItem('lastAccessed');
+    if (lastAccessed == null) {
+        localStorage.setItem('lastAccessed', now)
+        window.location.href = "starter.html";
+    } else if (now - lastAccessed > hours * 60 * 60 * 1000) {
+        localStorage.clear();
+        localStorage.setItem('lastAccessed', now);
+        window.location.href = "starter.html";
+    } else {
+        localStorage.setItem('lastAccessed', now);
+        const address = localStorage.getItem("address")
+        if (address == null){
+            window.location.href = "starter.html";
+        }
+    }
+    var priceLeft="0";
+    var priceRight="0";
+    function updatePizzaTotal(){
+        if (document.querySelector("select")) {
+            var select = document.querySelector("select").value.split(",");
+        }
+        document.getElementById("total").innerText = "£" + String(parseFloat(select[0]) + parseFloat(priceLeft) + parseFloat(priceRight));
+    }
+    function setHalf(pizzaSide,container){
+        const title = pizzaSide.querySelector(".title");
+        const price = pizzaSide.querySelector(".price");
+        const desc = pizzaSide.querySelector(".desc");
+        const contains = pizzaSide.querySelector(".contains")
+        const img = pizzaSide.querySelector("img");
+
+        title.innerText = container.querySelector(".title").innerText;
+        price.innerText = container.querySelector(".price").innerText;
+        desc.innerText = container.querySelector(".desc").innerText;
+        contains.innerText = container.querySelector(".contains").innerText;
+
+        img.setAttribute("src", `images/Pizzas/${container.querySelector(".title").id}.jpg`);
+        img.setAttribute("alt", container.querySelector(".title").innerText);
+    }
+
+    window.addEventListener("DOMContentLoaded", function (e) {
+        localStorage.removeItem("selectionLeft")
+        localStorage.removeItem("selectionRight")
+        const defaultSelect = document.getElementById("default");
+        const pizzaLeft = document.querySelector(".pizzaLeft");
+        setHalf(pizzaLeft,defaultSelect);
+        const pizzaRight = document.querySelector(".pizzaRight");
+        setHalf(pizzaRight,defaultSelect);
+        check();
+        const addHalf = document.querySelectorAll("button[addToHalf]");
+        addHalf.forEach(function (button) {
+            button.addEventListener("click", function (e) {
+                localStorage.setItem('lastAccessed', now);
+                const button = e.currentTarget;
+                const container = button.parentNode;
+                if (left == true){
+                    const selectionleft = {                                                 
+                        title: container.querySelector(".title").innerText,
+                        price: container.querySelector(".price").id,
+                        desc: container.querySelector(".desc").innerText,
+                        contains: button.getAttribute("addToHalf")
+                    };
+                    document.getElementById("leftSelect").innerText=container.querySelector(".title").innerText;
+                    priceLeft = container.querySelector(".price").id;
+                    localStorage.setItem("selectionLeft", JSON.stringify(selectionleft));
+                    const pizzaLeft = document.querySelector(".pizzaLeft");
+                    setHalf(pizzaLeft,container);
+                    left = false;
+                    check()
+                } else {
+                    const selectionright = {
+                        title: container.querySelector(".title").innerText,
+                        price: container.querySelector(".price").id,
+                        desc: container.querySelector(".desc").innerText,
+                        contains: button.getAttribute("addToHalf")
+                    };
+                    document.getElementById("rightSelect").innerText=container.querySelector(".title").innerText;
+                    priceRight = container.querySelector(".price").id;
+                    localStorage.setItem("selectionRight", JSON.stringify(selectionright));
+                    const pizzaRight = document.querySelector(".pizzaRight");
+                    setHalf(pizzaRight,container);
+                    left = true;
+                    check()
+                }
+                updatePizzaTotal();
+            })
+        })
+        
+        const addBasket = document.querySelectorAll("button[addToBasket]");
+        addBasket.forEach(function (button) {
+            button.addEventListener("click", function (e) {
+                localStorage.setItem('lastAccessed', now);
+                if (document.querySelector("select")) {
+                    var select = document.querySelector("select").value.split(",");
+                }
+                var leftHalf = JSON.parse(localStorage.getItem("selectionLeft"));
+                var rightHalf = JSON.parse(localStorage.getItem("selectionRight"));
+
+                if (leftHalf && rightHalf) {
+                    
+                    const order = {
+                        id: "half-half",
+                        title: "Half-Half",
+                        price: String((parseFloat(select[0])+ parseFloat(leftHalf.price) + parseFloat(rightHalf.price)).toFixed(2)),
+                        size: select[1],
+                        title1: leftHalf.title,
+                        contains1: leftHalf.contains,
+                        title2: rightHalf.title,
+                        contains2: rightHalf.contains
+                    };
+
+                    const oldorder = localStorage.getItem("order");
+                    if (oldorder == null) {
+                        localStorage.setItem("order", JSON.stringify(order))
+                    } else {
+                        const neworder = oldorder + "/" + JSON.stringify(order);
+                        localStorage.setItem("order", neworder);
+                    }
+
+                    document.getElementById('sidebasket').src = document.getElementById('sidebasket').src
+                    window.location.href = "pizzas.html";
+                } else {
+                    document.querySelector(".alert").style.display = "block";
+                }
+            });
+        });
+    });
+</script>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css" type="text/css">
+    <title>Prakizza's Sides</title>
+    <script src="JS/Main.js"></script>
+    <link rel="icon" href="Prakizza.ico">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><button onclick='goTo("pizzas.html")'>Pizza</a></li>
+                <li><button onclick='goTo("sides.html")'>Sides</a></li>
+                <li><button onclick='goTo("drinks.html")'>Drinks</a></li>
+                <li><button onclick='goTo("deals.html")'>Deals</a></li>
+                <li><button onclick='goTo("basket.html")'>Basket</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="sidebar">
+            <iframe id="sidebasket" src="basket.html" frameborder="0"></iframe>
+        </div>
+        <div class="content">
+            <aside>
+                <div class="pagetitleleft">
+                    <h1>Prakizza's</h1>
+                </div>
+                <img src="images/Logo200.png" alt = "Prakizza" class="Logo"/>
+                <div class="pagetitleright">
+                    <h1>Sides</h1>
+                </div>
+            </aside>
+            <article>
+                <section class = "items">
+    
+                    <div class="item">
+                        <img src="images/Sides/Salad.jpg" alt="Salad" />
+                        <div class="columns">
+                            <div class="title">Salad</div>
+                            <div class="price" id="1.99">£1.99</div>
+                        </div>
+                        <p class="desc">Our tasty juicy salad made with fresh ingredients</p>
+                        <button data-order="salad">Add to basket</button>
+                    </div>
+    
+                    <div class="item">
+                        <img src="images/Sides/Garlic-Bread.jpg" alt="Garlic Bread" />
+                        <div class="columns">
+                            <div class="title">Garlic Bread</div>
+                            <div class="price" id="2.49">£2.49</div>
+                        </div>
+                        <p class="desc"></p>
+                        <button data-order="garlic-bread">Add to basket</button>
+                    </div>
+    
+                    <div class="item">
+                        <img src="images/Sides/Cheesy-Garlic-Bread.jpg" alt="Cheesy Garlic Bread" />
+                        <div class="columns">
+                            <div class="title">Cheesy Garlic Bread</div>
+                            <div class="price" id="2.99">£2.99</div>
+                        </div>
+                        <p class="desc"></p>
+                        <button data-order="cheesy-garlic-bread">Add to basket</button>
+                    </div>
+    
+                    <div class="item">
+                        <img src="images/Sides/Coleslaw.jpeg" alt="Coleslaw" />
+                        <div class="columns">
+                            <div class="title">Coleslaw</div>
+                            <div class="price" id="1.99">£1.99</div>
+                        </div>
+                        <p class="desc"></p>
+                        <button data-order="coleslaw">Add to basket</button>
+                    </div>
+    
+                    <div class="item">
+                        <img src="images/Sides/Chicken-Wings.jpg" alt="Chicken Wings" />
+                        <div class="columns">
+                            <div class="title">Chicken Wings</div>
+                            <div class="price" id="4.99">£4.99</div>
+                        </div>
+                        <p class="desc"></p>
+                        <button data-order="chicken-wings">Add to basket</button>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </main>
+</body>
+<script>
+    function goTo(website) {
+        top.window.location.href = website;
+    }
+</script>
+</html>

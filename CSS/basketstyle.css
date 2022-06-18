@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+}
+
+html{
+    height: 100%;
+}
+/*nav bar*/
+
+nav {
+    width: 100vw;
+    height: calc(23px + 3vh);
+}
+nav button:hover {
+    background-color: #0065c4;
+}
+nav button {
+    transition-duration: 0.4s;
+    background: transparent;
+    border: 0;
+    color: #FCE77D;
+    font-size: 20px;
+    margin: 0px;
+    padding: 1.5vh calc(((100vw - 300px) / 10)) 1.5vh calc(((100vw - 300px) / 10));
+}
+nav>ul {
+    display: inline;
+    padding: 0;
+}
+nav>ul>li {
+    display: inline-block;
+    list-style: none;
+    font-size: 20px;
+    margin: 0;
+}
+@media only screen and (max-width: 325px) {
+    nav button {
+        font-size: 15px;
+        margin: 1.5vh calc(((94vw - 225px) / 10)) 1.5vh calc(((94vw - 225px) / 10));
+    }
+}
+header {
+    background-color: #F96167;
+    position: fixed;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #FCE77D;
+    height: calc(100%-110px);
+    padding-bottom: 45px;
+}
+main {
+    text-align: center;
+    display: block;
+    min-height:100%;
+    padding-top: calc(23px + 3vh);
+}
+article {
+    text-align: left;
+    width: 96%;
+    padding: 1%;
+    margin: 1%;
+    min-height: calc(90vh - 400px);
+    background-color: #fff;
+    border: solid 1px rgb(204, 204, 204);
+    position: relative;
+    padding-bottom: 30px;
+}
+aside {
+    padding-top: 1%;
+    display: block;
+}
+article > h1 {
+    text-align: left;
+    display: none;
+}
+article > ul > li {
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    margin: 5px 5px 0 3px;
+    padding: 10px;
+    margin-left: 0px;
+    background-color: #fff;
+    border: solid 1px #ccc;
+    font-weight: bolder;
+    width: 87%;
+}
+article > ul > li > ul > li {
+    list-style: none;
+    color: #999;
+    padding-top: 5px;
+}
+h2 {
+    position: absolute;
+    bottom: 0%;
+    right:20%;
+    display: flex;
+}
+
+article ul {
+    margin-left: 5px;
+    margin-right: 0px;
+    padding-left: 10px;
+    padding-right: 0px;
+}
+
+#price {
+    position: absolute;
+    right: 3%;
+    top:5px;
+    color: black;
+}
+
+
+@media only screen and (min-width: 428px) {
+    aside {
+        display: inline-flex;
+    }
+    h1.pagetitleleft {
+        text-align:left;
+        line-height: 200px;
+        font-size: xx-large;
+    }
+    h1.pagetitleright {
+        text-align: right;
+        line-height: 200px;
+        font-size: xx-large;
+    }
+    article ul {
+        margin-left: 10px;
+        margin-right: 0px;
+        padding-left: 20px;
+        padding-right: 0px;
+    }
+}
+
+/*buttons*/
+footer {
+    display: inline;
+    background-color: antiquewhite;
+    padding-bottom: 10px;
+}
+footer .reset button {
+    background: transparent;
+    border: 0;
+    text-decoration: underline;
+    padding: 10px;
+    float:left;
+    margin-left: 10%;
+}
+
+footer .view-basket button {
+    display: none;
+}
+input[type="submit"] {
+    border: solid 1px #999;
+    border-radius: 3px;
+    padding: 10px;
+    margin-right: 10%;
+    float: right;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color:grey;
+}
+button {
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+footer .view-basket button:hover {
+    background-color:grey;
+}
+footer .reset button:hover {
+    background-color:rgb(255, 72, 72);
+}
+
+/*iframe specific changes*/
+@media only screen and (width: 300px) {
+    header {
+        display: none;
+    }
+    aside {
+        display: none;
+    }
+    footer > button {
+        display:none;
+    }
+    article {
+        width: 92%;
+        padding: 2%;
+        margin: 2%;
+        min-height: calc(100vh - 95px);
+        padding-bottom: 30px;
+    }
+    article > h1 {
+        display: block;
+    }
+    h2 {
+        right:2%
+    }
+    footer .reset button {
+        background: transparent;
+        border: 0;
+        text-decoration: underline;
+        padding: 10px;
+        left: 0%;
+    }
+    footer .view-basket button {
+        border: solid 1px #999;
+        border-radius: 3px;
+        margin-right: 10%;
+        padding: 10px;
+        float: right;
+        display: block;
+    }
+    footer .view-basket button:hover {
+        background-color:grey;
+    }
+    input[type="submit"] {
+        display: none;
+    }
+    main {
+        padding-top: 0;
+    }
+}
+
+/*Scrollbar*/
+
+::-webkit-scrollbar {
+    width:14px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ffe667;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f7494f;
+    border: solid 1px rgb(0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #f8282f;
+}
