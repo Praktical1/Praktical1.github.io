@@ -1,5 +1,5 @@
 # Praktical1.github.io
-Pizza website host test
+Pizza website host test - open the site using this link: praktical1.github.io/
 
 Browsers:
 <ul>
